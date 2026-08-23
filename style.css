@@ -1,0 +1,587 @@
+/* Reset Style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Common Styles */
+.common-btn {
+    background-color: #1D4ED8;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.common-btn:hover {
+    background-color: #3B82F6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+nav { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #575757;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #1D4ED8;
+}
+
+
+/* ================= Hero Section Fixed Style ================= */
+.hero-parent-root {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/cover.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 750px;
+    width: 100%;
+}
+
+.hero-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* কন্টেন্টকে একদম উপরে এবং নিচে পাঠাবে */
+    align-items: center;
+    padding-top: 50px;    /* চিহ্নিত উপরের ডার্ক অংশে টেক্সট পজিশন করবে */
+    padding-bottom: 80px; /* চিহ্নিত নিচের ডার্ক অংশে বাটন পজিশন করবে */
+    box-sizing: border-box;
+}
+
+.hero-text {
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 800px;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02rem;
+    margin-bottom: 12px;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #E2E8F0;
+}
+
+.hero-btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-btn {
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+/* Speakers Section */
+.speakers-parent {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.speakers-parent-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000102;
+    margin-bottom: 48px;
+}
+
+.speakers-parent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.speaker-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.speaker-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.speaker-content {
+    padding: 20px;
+}
+
+.speaker-category {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2563EB;
+    margin-bottom: 8px;
+}
+
+.speaker-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0D1B2A;
+}
+
+.speaker-content p {
+    font-size: 14px;
+    color: #575757;
+}
+
+/* Pricing Section */
+.pricing-parent {
+    padding: 80px 0;
+    background: #FFFFFF;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.pricing-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    margin-bottom: 12px;
+}
+
+.pricing-header p {
+    font-size: 16px;
+    color: #575757;
+}
+
+.pricing-parent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-type {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888888;
+    letter-spacing: 0.8px;
+}
+
+.price-wrap {
+    margin-top: 12px;
+}
+
+.price-wrap h3 {
+    font-size: 44px;
+    line-height: 1;
+    font-weight: 700;
+    color: #0D1B2A;
+}
+
+.price-wrap span {
+    font-size: 13px;
+    color: #888888;
+}
+
+.divider {
+    height: 1px;
+    background: #E5E7EB;
+    margin: 24px 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-card ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.pricing-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2563EB;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.outline-btn,
+.primary-btn,
+.dark-outline-btn {
+    width: 100%;
+    height: 46px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 1px solid #2563EB;
+    color: #2563EB;
+}
+
+.primary-btn {
+    background: #2563EB;
+    border: none;
+    color: #fff;
+}
+
+.dark-outline-btn {
+    background: transparent;
+    border: 1px solid #111827;
+    color: #111827;
+}
+
+.pricing-card-active {
+    background: #0D1B2A;
+    border: none;
+}
+
+.pricing-card-active .plan-type,
+.pricing-card-active .price-wrap span {
+    color: #93C5FD;
+}
+
+.pricing-card-active .price-wrap h3 {
+    color: #fff;
+}
+
+.pricing-card-active .divider {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.pricing-card-active ul li {
+    color: #DBE5F1;
+}
+
+.pricing-card-active ul li::before {
+    color: #60A5FA;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 80px 0;
+    background: #F8FAFC;
+}
+
+.experience-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.experience-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0D1B2A;
+    margin-bottom: 12px;
+}
+
+.experience-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #575757;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.experience-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(13, 27, 42, 0.08);
+}
+
+.experience-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.feature-tag {
+    background: #EFF6FF;
+    color: #2563EB;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.experience-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0D1B2A;
+    margin-bottom: 12px;
+}
+
+.experience-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #575757;
+}
+
+/* Footer Section */
+.footer-parent {
+    background: #071A34;
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-parent-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-copyright,
+.footer-credit {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+
+.footer-credit a,
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-credit a:hover,
+.footer-links a:hover {
+    color: #60A5FA;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ==========================================================
+   RESPONSIVE MEDIA QUERIES (Mobile & Tablet)
+   ========================================================== */
+
+/* Tablet View (Max Width: 992px) */
+@media screen and (max-width: 992px) {
+    .speakers-parent-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-parent-grid,
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE MEDIA QUERIES (Mobile & Tablet)
+   ========================================================== */
+
+/* Tablet View (Max Width: 992px) */
+@media screen and (max-width: 992px) {
+    .speakers-parent-grid,
+    .pricing-parent-grid,
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View (Max Width: 768px) - 2 Columns Layout */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    /* Navbar Mobile Layout */
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+/* Hero Section Mobile Position Fix */
+    .hero-parent-root {
+        height: 520px;
+    }
+
+    .hero-container {
+        padding-top: 140px;
+        padding-bottom: 30px;
+    }
+
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Typography Responsive Sizes */
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .speakers-parent-title,
+    .pricing-header h2,
+    .experience-header h2 {
+        font-size: 1.6rem;
+    }
+
+    /* ALL GRIDS: 2 Columns on Mobile */
+    .speakers-parent-grid,
+    .pricing-parent-grid,
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Speakers Card Compact Size */
+    .speaker-card img {
+        height: 150px;
+    }
+
+    .speaker-content {
+        padding: 10px;
+    }
+
+    .speaker-category {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+
+    .speaker-content h3 {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    .speaker-content p {
+        font-size: 11px;
+        line-height: 1.3;
+    }
+
+    /* Pricing Card Compact Size */
+    .pricing-card {
+        padding: 16px 12px;
+    }
+
+    .price-wrap h3 {
+        font-size: 28px;
+    }
+
+    .pricing-card ul li {
+        font-size: 11px;
+        margin-bottom: 8px;
+        padding-left: 14px;
+    }
+
+    /* Experience Card Compact Size */
+    .experience-card {
+        padding: 16px 12px;
+    }
+
+    .experience-card img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .experience-card h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .experience-card p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* Footer Mobile Layout */
+    .footer-parent-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
