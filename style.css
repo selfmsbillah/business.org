@@ -60,10 +60,33 @@ ul li a:hover {
     color: #1D4ED8;
 }
 
+.close-btn-wrap {
+    display: none;
+}
+
+/* Overlay Style */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /* ================= Hero Section Fixed Style ================= */
 .hero-parent-root {
-   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('cover.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/cover.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,10 +98,10 @@ ul li a:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* কন্টেন্টকে একদম উপরে এবং নিচে পাঠাবে */
+    justify-content: space-between;
     align-items: center;
-    padding-top: 50px;    /* চিহ্নিত উপরের ডার্ক অংশে টেক্সট পজিশন করবে */
-    padding-bottom: 80px; /* চিহ্নিত নিচের ডার্ক অংশে বাটন পজিশন করবে */
+    padding-top: 50px;
+    padding-bottom: 80px;
     box-sizing: border-box;
 }
 
@@ -113,6 +136,7 @@ ul li a:hover {
     border-radius: 8px;
     white-space: nowrap;
 }
+
 /* Speakers Section */
 .speakers-parent {
     padding: 80px 0;
@@ -450,31 +474,128 @@ ul li a:hover {
     }
 }
 
-/* ==========================================================
-   RESPONSIVE MEDIA QUERIES (Mobile & Tablet)
-   ========================================================== */
-
-/* Tablet View (Max Width: 992px) */
-@media screen and (max-width: 992px) {
-    .speakers-parent-grid,
-    .pricing-parent-grid,
-    .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile View (Max Width: 768px) - 2 Columns Layout */
+/* Mobile View Layout Fix (Max Width: 768px) */
 @media screen and (max-width: 768px) {
     .container {
         padding: 0 12px;
     }
 
-    /* Navbar Mobile Layout */
+    /* 2-Line Header Layout */
     nav {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
         gap: 12px;
     }
-/* Hero Section Mobile Position Fix */
+
+    .logo, 
+    nav > img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        order: 1;
+    }
+
+    nav > img {
+        max-height: 36px;
+        object-fit: contain;
+    }
+
+    /* ৩-লাইনের টগল বাটন (z-index ৫০ করা হয়েছে যেন সাইডবারের নিচে থাকে) */
+    .menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        cursor: pointer;
+        color: #0F172A;
+        background-color: #F1F5F9;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        z-index: 50; 
+        order: 2;
+        transition: background 0.2s ease;
+    }
+
+    .menu-toggle:hover {
+        background-color: #E2E8F0;
+    }
+
+    .nav-btn {
+        order: 3;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* সাইডবার মেনু (z-index ১০০০০ করা হয়েছে যেন টগল বাটনের উপরে চলে আসে) */
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 250px;
+        height: 100vh;
+        background-color: #0F172A;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 10px;
+        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 8px 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 10000; 
+    }
+
+    nav ul.active {
+        left: 0;
+    }
+
+    /* Close Button (✕) Inside Mobile Menu */
+    .close-btn-wrap {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .close-menu {
+        font-size: 28px;
+        color: #94A3B8;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.2s;
+    }
+
+    .close-menu:hover {
+        color: #FFFFFF;
+    }
+
+    nav ul li {
+        width: 100%;
+        list-style: none;
+    }
+
+    nav ul li a {
+        color: #94A3B8;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        display: block;
+        padding: 12px 16px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    nav ul li a:hover {
+        color: #FFFFFF;
+        background-color: #1E293B;
+        padding-left: 20px;
+    }
+
+    /* Hero Section Position */
     .hero-parent-root {
         height: 520px;
     }
@@ -484,18 +605,6 @@ ul li a:hover {
         padding-bottom: 30px;
     }
 
-    .hero-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    nav ul {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /* Typography Responsive Sizes */
     .hero-text h2 {
         font-size: 2rem;
     }
@@ -504,13 +613,19 @@ ul li a:hover {
         font-size: 0.95rem;
     }
 
+    .hero-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Sections Title */
     .speakers-parent-title,
     .pricing-header h2,
     .experience-header h2 {
         font-size: 1.6rem;
     }
 
-    /* ALL GRIDS: 2 Columns on Mobile */
+    /* All Grids: 2 Columns */
     .speakers-parent-grid,
     .pricing-parent-grid,
     .experience-grid {
@@ -518,7 +633,7 @@ ul li a:hover {
         gap: 12px;
     }
 
-    /* Speakers Card Compact Size */
+    /* Speakers Card */
     .speaker-card img {
         height: 150px;
     }
@@ -542,7 +657,7 @@ ul li a:hover {
         line-height: 1.3;
     }
 
-    /* Pricing Card Compact Size */
+    /* Pricing Card */
     .pricing-card {
         padding: 16px 12px;
     }
@@ -557,7 +672,7 @@ ul li a:hover {
         padding-left: 14px;
     }
 
-    /* Experience Card Compact Size */
+    /* Experience Card */
     .experience-card {
         padding: 16px 12px;
     }
@@ -578,10 +693,122 @@ ul li a:hover {
         line-height: 1.4;
     }
 
-    /* Footer Mobile Layout */
+    /* Footer */
     .footer-parent-container {
         flex-direction: column;
         text-align: center;
         gap: 12px;
+    }
+}
+
+/* Desktop View Hide Toggle Icon */
+@media screen and (min-width: 769px) {
+    .menu-toggle {
+        display: none !important;
+    }
+}
+
+/* *************************** */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* যেন সব কনটেন্টের উপরে থাকে */
+  
+  /* ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড এবং ব্লার ইফেক্ট */
+  background-color: rgba(255, 255, 255, 0.7); /* সাদাফ্ল্যাট হালকা ট্রান্সপারেন্ট */
+  backdrop-filter: blur(10px); /* ব্লার ইফেক্ট */
+  -webkit-backdrop-filter: blur(10px); /* Safari ব্রাউজারের জন্য support */
+  
+  /* হালকা বর্ডার ও শেডো */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+
+  /* স্মুথ স্লাইড অ্যানিমেশনের জন্য */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* মোবাইলে নিচে স্ক্রল করলে লোগোর অংশ উপরে স্লাইড হয়ে চলে যাবে */
+@media screen and (max-width: 768px) {
+  header.hide-logo {
+    transform: translateY(-48px); /* প্রয়োজন অনুযায়ী পিক্সেল টিউন করতে পারেন */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   FIXES FOR MOBILE VIEW & UNDERLINE ISSUE
+   ========================================================== */
+
+/* ১. সব বাটনের নিচের আন্ডারলাইন রিমুভ ও এলাইনমেন্ট ফিক্স */
+a.common-btn, 
+.common-btn {
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ২. মোবাইল ভিউ ফিক্স (৭৬৮ পিক্সেল বা তার নিচে) */
+@media screen and (max-width: 768px) {
+    /* হেডার লেআউট স্ট্রাকচার ফিক্স */
+    nav {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 0 !important;
+        gap: 0 !important;
+    }
+
+    /* লোগো পজিশনিং */
+    .nav-logo {
+        width: auto !important;
+        max-height: 32px !important;
+        order: 2 !important;
+    }
+
+    /* টগল বাটন ও রেজিস্টার বাটন */
+    .menu-toggle {
+        order: 1 !important;
+        margin: 0 !important;
+    }
+
+    header .hero-btn, 
+    header .nav-btn {
+        order: 3 !important;
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+        white-space: nowrap;
+    }
+
+    /* হিরো সেকশন ওভারফ্লো ফিক্স */
+    .hero-parent-root {
+        height: auto !important;
+        min-height: 480px;
+        padding: 40px 0;
+    }
+
+    .hero-container {
+        padding-top: 60px !important;
+        padding-bottom: 20px !important;
+    }
+
+    /* স্ক্রোলিং ট্রান্সফর্ম রিসেট (লেআউট ভাঙা রোধ করতে) */
+    header.hide-logo {
+        transform: none !important;
     }
 }
