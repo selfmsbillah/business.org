@@ -12,22 +12,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar start -->
-    <header>
-        <nav class="container">
-            <img src="logo.png" alt="DevConf Logo">
 
-            <ul class="nav-links">
-                <li><a href="#">Speakers</a></li>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Tracks</a></li>
-                <li><a href="#">Venue</a></li>
-                <li><a href="#">Blog</a></li>
+<header>
+    <div class="container">
+        <nav>
+            <!-- লোগো (উপরে সেন্টারে থাকবে) -->
+            <img src="./assets/logo.png" alt="DevConf Logo" class="nav-logo">
+
+            <!-- মোবাইলের জন্য টগল মেনু বাটন (২য় লাইনের বামে) -->
+            <div class="menu-toggle" id="menu-toggle">
+                &#9776;
+            </div>
+
+            <!-- নেভিগেশন আইটেম (অফ-ক্যানভাস ডিজাইন) -->
+            <ul id="nav-menu">
+                <li class="close-btn-wrap">
+                    <span class="close-menu" id="close-menu">&times;</span>
+                </li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#blog">Blog</a></li>
             </ul>
-            <button class="common-btn nav-btn">Register Now</button>
+
+            <!-- রেজিস্টার বাটন (২য় লাইনের ডানে) -->
+           <a href="./auth.html" class="common-btn hero-btn">Register Now</a>
         </nav>
-    </header>
-    <!-- Navbar end -->
+    </div>
+</header>
+
+<!-- স্ক্রিন আবছায়া করার জন্য এবং বাইরে ক্লিক ধরে মেনু বন্ধ করার জন্য ওভারলে -->
+<div class="menu-overlay" id="menu-overlay"></div>
 
 <!-- Hero section start -->
 <section class="hero-parent-root">
@@ -41,181 +57,237 @@
 
         <!-- Bottom Dark Region (Register Button) -->
         <div class="hero-btn-wrap">
-            <button class="common-btn hero-btn">Register Now</button>
+           <a href="./auth.html" class="common-btn hero-btn">Register Now</a>
         </div>
 
     </div>
 </section>
 <!-- Hero section end -->
 
-    <!-- Speakers section start -->
-    <section class="speakers-parent">
-        <div class="container">
-            <h2 class="speakers-parent-title">Meet the Speakers</h2>
+<!-- Speakers section start -->
+<section class="speakers-parent" id="speakers">
+    <div class="container">
+        <h2 class="speakers-parent-title">Meet the Speakers</h2>
 
-            <div class="speakers-parent-grid">
-                <div class="speaker-card">
-                    <img src="andrej.png" alt="Andrej Karpathy">
-                    <div class="speaker-content">
-                        <span class="speaker-category">AI / ML</span>
-                        <h3>Andrej Karpathy</h3>
-                        <p>Pretraining Team, Anthropic</p>
-                    </div>
+        <div class="speakers-parent-grid">
+            <div class="speaker-card">
+                <img src="./assets/andrej.png" alt="Andrej Karpathy">
+                <div class="speaker-content">
+                    <span class="speaker-category">AI / ML</span>
+                    <h3>Andrej Karpathy</h3>
+                    <p>Pretraining Team, Anthropic</p>
                 </div>
+            </div>
 
-                <div class="speaker-card">
-                    <img src="demis.png" alt="Demis Hassabis">
-                    <div class="speaker-content">
-                        <span class="speaker-category">Cloud & DevOps</span>
-                        <h3>Demis Hassabis</h3>
-                        <p>Co-Founder and CEO, Google DeepMind</p>
-                    </div>
+            <div class="speaker-card">
+                <img src="./assets/demis.png" alt="Demis Hassabis">
+                <div class="speaker-content">
+                    <span class="speaker-category">Cloud & DevOps</span>
+                    <h3>Demis Hassabis</h3>
+                    <p>Co-Founder and CEO, Google DeepMind</p>
                 </div>
+            </div>
 
-                <div class="speaker-card">
-                    <img src="gary.png" alt="Gary Marcus">
-                    <div class="speaker-content">
-                        <span class="speaker-category">Frontend</span>
-                        <h3>Gary Marcus</h3>
-                        <p>Staff Engineer, Vercel</p>
-                    </div>
+            <div class="speaker-card">
+                <img src="./assets/gary.png" alt="Gary Marcus">
+                <div class="speaker-content">
+                    <span class="speaker-category">Frontend</span>
+                    <h3>Gary Marcus</h3>
+                    <p>Staff Engineer, Vercel</p>
                 </div>
+            </div>
 
-                <div class="speaker-card">
-                    <img src="mustafa.png" alt="Mustafa Suleyman">
-                    <div class="speaker-content">
-                        <span class="speaker-category">Security</span>
-                        <h3>Mustafa Suleyman</h3>
-                        <p>CEO of Microsoft AI</p>
-                    </div>
+            <div class="speaker-card">
+                <img src="./assets/mustafa.png" alt="Mustafa Suleyman">
+                <div class="speaker-content">
+                    <span class="speaker-category">Security</span>
+                    <h3>Mustafa Suleyman</h3>
+                    <p>CEO of Microsoft AI</p>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Speakers section end -->
+    </div>
+</section>
+<!-- Speakers section end -->
 
-    <!-- Pricing section start -->
-    <section class="pricing-parent">
-        <div class="container">
-            <div class="pricing-header">
-                <h2>Secure Your Spot</h2>
-                <p>Early-bird pricing ends August 15, 2026.</p>
+<!-- Pricing section start -->
+<section class="pricing-parent" id="schedule">
+    <div class="container">
+        <div class="pricing-header">
+            <h2>Secure Your Spot</h2>
+            <p>Early-bird pricing ends August 15, 2026.</p>
+        </div>
+
+        <div class="pricing-parent-grid">
+            <!-- Standard -->
+            <div class="pricing-card">
+                <span class="plan-type">STANDARD</span>
+                <div class="price-wrap">
+                    <h3>$399</h3>
+                    <span>per person</span>
+                </div>
+                <div class="divider"></div>
+                <ul>
+                    <li>Access to all 3 conference days</li>
+                    <li>40 curated technical talks</li>
+                    <li>2 workshop sessions</li>
+                    <li>Networking lunch & coffee breaks</li>
+                    <li>Conference swag bag</li>
+                    <li>Digital recordings (30 days)</li>
+                </ul>
+                <button class="outline-btn">Get Standard</button>
             </div>
 
-            <div class="pricing-parent-grid">
-                <!-- Standard -->
-                <div class="pricing-card">
-                    <span class="plan-type">STANDARD</span>
-                    <div class="price-wrap">
-                        <h3>$399</h3>
-                        <span>per person</span>
-                    </div>
-                    <div class="divider"></div>
-                    <ul>
-                        <li>Access to all 3 conference days</li>
-                        <li>40 curated technical talks</li>
-                        <li>2 workshop sessions</li>
-                        <li>Networking lunch & coffee breaks</li>
-                        <li>Conference swag bag</li>
-                        <li>Digital recordings (30 days)</li>
-                    </ul>
-                    <button class="outline-btn">Get Standard</button>
+            <!-- Pro -->
+            <div class="pricing-card pricing-card-active">
+                <span class="plan-type">PRO</span>
+                <div class="price-wrap">
+                    <h3>$749</h3>
+                    <span>per person</span>
                 </div>
+                <div class="divider"></div>
+                <ul>
+                    <li>Everything in Standard</li>
+                    <li>Unlimited workshop access</li>
+                    <li>Speaker meet & greet</li>
+                    <li>VIP networking dinner</li>
+                    <li>Lifetime recording access</li>
+                    <li>1-on-1 mentorship (30 min)</li>
+                </ul>
+                <button class="primary-btn">Get Pro</button>
+            </div>
 
-                <!-- Pro -->
-                <div class="pricing-card pricing-card-active">
-                    <span class="plan-type">PRO</span>
-                    <div class="price-wrap">
-                        <h3>$749</h3>
-                        <span>per person</span>
-                    </div>
-                    <div class="divider"></div>
-                    <ul>
-                        <li>Everything in Standard</li>
-                        <li>Unlimited workshop access</li>
-                        <li>Speaker meet & greet</li>
-                        <li>VIP networking dinner</li>
-                        <li>Lifetime recording access</li>
-                        <li>1-on-1 mentorship (30 min)</li>
-                    </ul>
-                    <button class="primary-btn">Get Pro</button>
+            <!-- Team -->
+            <div class="pricing-card">
+                <span class="plan-type">TEAM</span>
+                <div class="price-wrap">
+                    <h3>$5,999</h3>
+                    <span>up to 10 people</span>
                 </div>
-
-                <!-- Team -->
-                <div class="pricing-card">
-                    <span class="plan-type">TEAM</span>
-                    <div class="price-wrap">
-                        <h3>$5,999</h3>
-                        <span>up to 10 people</span>
-                    </div>
-                    <div class="divider"></div>
-                    <ul>
-                        <li>Everything in Pro (10 seats)</li>
-                        <li>Dedicated team lounge access</li>
-                        <li>Private workshop booking</li>
-                        <li>Company logo on event page</li>
-                        <li>Recruitment booth (1 day)</li>
-                        <li>Priority customer support</li>
-                    </ul>
-                    <button class="dark-outline-btn">Contact Us</button>
-                </div>
+                <div class="divider"></div>
+                <ul>
+                    <li>Everything in Pro (10 seats)</li>
+                    <li>Dedicated team lounge access</li>
+                    <li>Private workshop booking</li>
+                    <li>Company logo on event page</li>
+                    <li>Recruitment booth (1 day)</li>
+                    <li>Priority customer support</li>
+                </ul>
+                <button class="dark-outline-btn">Contact Us</button>
             </div>
         </div>
-    </section>
-    <!-- Pricing section end -->
+    </div>
+</section>
+<!-- Pricing section end -->
 
-    <!-- Experience Section Start-->
-    <section class="experience-section">
-        <div class="container">
-            <div class="experience-header">
-                <h2>Why Attend DevConf 2026?</h2>
-                <p>Three days designed to help developers, founders, and tech leaders learn, connect, and grow.</p>
+<!-- Experience Section Start-->
+<section class="experience-section" id="tracks">
+    <div class="container">
+        <div class="experience-header">
+            <h2>Why Attend DevConf 2026?</h2>
+            <p>Three days designed to help developers, founders, and tech leaders learn, connect, and grow.</p>
+        </div>
+
+        <div class="experience-grid">
+            <div class="experience-card">
+                <img src="./assets/industry.png" alt="Industry Insights">
+                <span class="feature-tag">AI & Engineering</span>
+                <h3>Industry Insights</h3>
+                <p>Learn from world-class engineers and technology leaders shaping the future of software development.</p>
             </div>
 
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <img src="industry.png" alt="Industry Insights">
-                    <span class="feature-tag">AI & Engineering</span>
-                    <h3>Industry Insights</h3>
-                    <p>Learn from world-class engineers and technology leaders shaping the future of software development.</p>
-                </div>
+            <div class="experience-card">
+                <img src="./assets/meningful.png" alt="Networking">
+                <span class="feature-tag">Networking</span>
+                <h3>Build Valuable Connections</h3>
+                <p>Connect with developers, founders, recruiters, and decision-makers from leading technology companies.</p>
+            </div>
 
-                <div class="experience-card">
-                    <img src="meningful.png" alt="Networking">
-                    <span class="feature-tag">Networking</span>
-                    <h3>Build Valuable Connections</h3>
-                    <p>Connect with developers, founders, recruiters, and decision-makers from leading technology companies.</p>
-                </div>
-
-                <div class="experience-card">
-                    <img src="hands.png" alt="Workshops">
-                    <span class="feature-tag">Hands-on Learning</span>
-                    <h3>Interactive Workshops</h3>
-                    <p>Gain practical experience through coding labs, live demonstrations, and expert-led technical sessions.</p>
-                </div>
+            <div class="experience-card">
+                <img src="./assets/hands.png" alt="Workshops">
+                <span class="feature-tag">Hands-on Learning</span>
+                <h3>Interactive Workshops</h3>
+                <p>Gain practical experience through coding labs, live demonstrations, and expert-led technical sessions.</p>
             </div>
         </div>
-    </section>
-    <!-- Experience Section End-->
+    </div>
+</section>
+<!-- Experience Section End-->
 
-    <!-- Footer section start -->
-    <footer class="footer-parent">
-        <div class="container footer-parent-container">
-            <div class="footer-copyright">
-                © 2026 DevConf. All rights reserved.
-            </div>
-
-            <div class="footer-links">
-                <a href="https://github.com/selfmsbillah" target="_blank">GitHub</a>
-                <a href="https://www.facebook.com/self.masumbillah/" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/self.masum/" target="_blank">Instagram</a>
-            </div>
-
-            <div class="footer-credit">
-                Developed by
-                <a href="https://selfmsbillah.github.io/masumportfolio.github.io/#contact">Masum Billah</a>
-            </div>
+<!-- Footer section start -->
+<footer class="footer-parent">
+    <div class="container footer-parent-container">
+        <div class="footer-copyright">
+            © 2026 DevConf. All rights reserved.
         </div>
-    </footer>
+
+        <div class="footer-links">
+            <a href="https://github.com/selfmsbillah" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/self.masumbillah/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/self.masum/" target="_blank">Instagram</a>
+        </div>
+
+        <div class="footer-credit">
+            Developed by
+            <a href="https://selfmsbillah.github.io/masumportfolio.github.io/#contact">Masum Billah</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript for Menu Toggle and Smooth Close -->
+<!-- JavaScript for Menu Toggle, Smooth Close and Mobile Header Auto-Hide -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuLinks = document.querySelectorAll('#nav-menu a');
+    const header = document.querySelector('header');
+
+    // ১. মেনু বন্ধ করার মূল ফংশন
+    function hideMenu() {
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    }
+
+    // ২. টগল বাটন ক্লিক করলে মেনু খুলবে/বন্ধ হবে
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+    });
+
+    // ৩. 'X' বাটনে ক্লিক করলে বন্ধ হবে
+    if(closeMenu) {
+        closeMenu.addEventListener('click', hideMenu);
+    }
+
+    // ৪. বাইরের স্ক্রিনে বা ওভারলেতে ক্লিক করলে বন্ধ হবে
+    menuOverlay.addEventListener('click', hideMenu);
+
+    // ৫. স্ক্রোল করলে মেনু বন্ধ হবে এবং মোবাইলে লোগো অংশ উপরে স্লাইড হয়ে সরে যাবে
+    window.addEventListener('scroll', () => {
+        hideMenu(); // স্ক্রোল করলে সাইডবার মেনু বন্ধ হবে
+
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // শুধু মোবাইলে (৭৬৮ পিক্সেলের নিচে) স্ক্রল করলে লোগো অংশ হাইড হবে
+        if (window.innerWidth <= 768) {
+            if (scrollTop > 40) {
+                header.classList.add('hide-logo');
+            } else {
+                header.classList.remove('hide-logo');
+            }
+        } else {
+            header.classList.remove('hide-logo');
+        }
+    });
+
+    // ৬. মেনুর যেকোনো লিঙ্কে ক্লিক করলে মেনু বন্ধ হবে
+    menuLinks.forEach(link => {
+        link.addEventListener('click', hideMenu);
+    });
+</script>
+
 </body>
 </html>
