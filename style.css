@@ -86,7 +86,7 @@ ul li a:hover {
 
 /* ================= Hero Section Fixed Style ================= */
 .hero-parent-root {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/cover.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('cover.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -458,10 +458,6 @@ ul li a:hover {
     gap: 20px;
 }
 
-/* ==========================================================
-   RESPONSIVE MEDIA QUERIES (Mobile & Tablet)
-   ========================================================== */
-
 /* Tablet View (Max Width: 992px) */
 @media screen and (max-width: 992px) {
     .speakers-parent-grid {
@@ -502,8 +498,7 @@ ul li a:hover {
         max-height: 36px;
         object-fit: contain;
     }
-
-    /* ৩-লাইনের টগল বাটন (z-index ৫০ করা হয়েছে যেন সাইডবারের নিচে থাকে) */
+/* Fix Button  */
     .menu-toggle {
         display: flex !important;
         align-items: center;
@@ -530,7 +525,7 @@ ul li a:hover {
         font-size: 14px;
     }
 
-    /* সাইডবার মেনু (z-index ১০০০০ করা হয়েছে যেন টগল বাটনের উপরে চলে আসে) */
+    /*  z-index  */
     nav ul {
         position: fixed;
         top: 0;
@@ -712,25 +707,25 @@ ul li a:hover {
 header {
   position: sticky;
   top: 0;
-  z-index: 1000; /* যেন সব কনটেন্টের উপরে থাকে */
+  z-index: 1000; 
   
-  /* ট্রান্সপারেন্ট ব্যাকগ্রাউন্ড এবং ব্লার ইফেক্ট */
-  background-color: rgba(255, 255, 255, 0.7); /* সাদাফ্ল্যাট হালকা ট্রান্সপারেন্ট */
-  backdrop-filter: blur(10px); /* ব্লার ইফেক্ট */
-  -webkit-backdrop-filter: blur(10px); /* Safari ব্রাউজারের জন্য support */
+ 
+  background-color: rgba(255, 255, 255, 0.7); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
   
-  /* হালকা বর্ডার ও শেডো */
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 
-  /* স্মুথ স্লাইড অ্যানিমেশনের জন্য */
+ 
   transition: transform 0.3s ease-in-out;
 }
 
-/* মোবাইলে নিচে স্ক্রল করলে লোগোর অংশ উপরে স্লাইড হয়ে চলে যাবে */
+
 @media screen and (max-width: 768px) {
   header.hide-logo {
-    transform: translateY(-48px); /* প্রয়োজন অনুযায়ী পিক্সেল টিউন করতে পারেন */
+    transform: translateY(-48px); 
   }
 }
 
@@ -750,11 +745,10 @@ header {
 
 
 
-/* ==========================================================
+/* 
    FIXES FOR MOBILE VIEW & UNDERLINE ISSUE
-   ========================================================== */
+    */
 
-/* ১. সব বাটনের নিচের আন্ডারলাইন রিমুভ ও এলাইনমেন্ট ফিক্স */
 a.common-btn, 
 .common-btn {
     text-decoration: none !important;
@@ -763,9 +757,9 @@ a.common-btn,
     justify-content: center;
 }
 
-/* ২. মোবাইল ভিউ ফিক্স (৭৬৮ পিক্সেল বা তার নিচে) */
+
 @media screen and (max-width: 768px) {
-    /* হেডার লেআউট স্ট্রাকচার ফিক্স */
+   
     nav {
         flex-wrap: nowrap !important;
         justify-content: space-between !important;
@@ -795,7 +789,6 @@ a.common-btn,
         white-space: nowrap;
     }
 
-    /* হিরো সেকশন ওভারফ্লো ফিক্স */
     .hero-parent-root {
         height: auto !important;
         min-height: 480px;
@@ -807,7 +800,7 @@ a.common-btn,
         padding-bottom: 20px !important;
     }
 
-    /* স্ক্রোলিং ট্রান্সফর্ম রিসেট (লেআউট ভাঙা রোধ করতে) */
+  
     header.hide-logo {
         transform: none !important;
     }
